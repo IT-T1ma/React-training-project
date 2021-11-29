@@ -18,6 +18,10 @@ class EmploeesAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        if(this.state.name.length < 3 || this.state.salary === "") {
+            alert('Имя должно содержать не менее 3 символов и поле зарплаты должно быть заполнено!!!')
+        return};
+        
         this.props.onAdd(this.state.name, this.state.salary);
         this.setState({
             name: '',
